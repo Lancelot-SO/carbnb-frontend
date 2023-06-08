@@ -5,6 +5,7 @@ import { loginUser, registerUser } from '../redux/users/users';
 const Login = () => {
   const [username, setUserName] = useState('');
 
+  // to be changed based on a later state of the redux actions and reducers
   const dispatch = useDispatch();
   const error = useSelector((state) => state?.user.status);
 
