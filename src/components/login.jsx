@@ -23,8 +23,7 @@ const Login = () => {
   return (
     <div className="form-container-login">
       <form onSubmit={handleLogin}>
-        <div className="login-logo">
-        </div>
+        <div className="login-logo" />
         <input onChange={(e) => setUserName(e.target.value)} type="username" name="username" value={username} id="username" placeholder="Username:" required />
         <input className="login-btn" type="submit" value="Login" />
       </form>
