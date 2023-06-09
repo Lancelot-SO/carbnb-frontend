@@ -1,5 +1,6 @@
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
 import './form.css';
 
@@ -32,6 +33,9 @@ function SampleForm() {
           onChange={handlePriceChange}
           name="car[price]"
         />
+
+        <Button type="submit" variant="outline-success mt-2 sub-btn">Submit form</Button>
+
       </Form>
     </>
   );
