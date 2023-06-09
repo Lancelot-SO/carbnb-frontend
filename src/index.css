@@ -1,3 +1,10 @@
+:root {
+  --color-primary: #9ca3af;
+  --color-secondary: #22c55e;
+  --color-white: #ffffff;
+  --color-black: #000;
+}
+
 #root {
   width: 100%;
 }
