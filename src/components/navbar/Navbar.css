@@ -52,7 +52,7 @@ body {
   padding: 10px;
   text-decoration: none;
   color: black;
-  margin-left: 70px;
+  margin-left: 50px;
   border-radius: 2px;
   transition: background-color 0.3s ease;
 }
@@ -65,7 +65,7 @@ body {
   display: flex;
   justify-content: center;
   color: black;
-  margin-top: 170px;
+  margin-top: 150px;
   gap: 8px;
 }
 

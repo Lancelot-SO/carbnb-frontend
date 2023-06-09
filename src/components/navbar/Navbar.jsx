@@ -30,29 +30,47 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              to="/about"
-              className={activeLink === 'about' ? 'active' : ''}
-              onClick={() => handleLinkClick('about')}
+              to="/cars"
+              className={activeLink === 'cars' ? 'active' : ''}
+              onClick={() => handleLinkClick('cars')}
             >
-              About
+              Cars
             </Link>
           </li>
           <li>
             <Link
-              to="/services"
-              className={activeLink === 'services' ? 'active' : ''}
-              onClick={() => handleLinkClick('services')}
+              to="/reserve"
+              className={activeLink === 'reserve' ? 'active' : ''}
+              onClick={() => handleLinkClick('reserve')}
             >
-              Services
+              Reserve
             </Link>
           </li>
           <li>
             <Link
-              to="/contact"
-              className={activeLink === 'contact' ? 'active' : ''}
-              onClick={() => handleLinkClick('contact')}
+              to="/reservations"
+              className={activeLink === 'reservations' ? 'active' : ''}
+              onClick={() => handleLinkClick('reservations')}
             >
-              Contact
+              Reservations
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/addcars"
+              className={activeLink === 'addcars' ? 'active' : ''}
+              onClick={() => handleLinkClick('addcars')}
+            >
+              Add Cars
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/delete"
+              className={activeLink === 'delete' ? 'active' : ''}
+              onClick={() => handleLinkClick('delete')}
+            >
+              Delete Cars
             </Link>
           </li>
         </ul>
