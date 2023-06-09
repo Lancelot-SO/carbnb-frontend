@@ -1,7 +1,7 @@
 .price-label {
-    text-align: center;
+  text-align: center;
 }
 
 .price-label label {
-    display: contents;
+  display: contents;
 }
