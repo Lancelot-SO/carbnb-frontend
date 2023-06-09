@@ -39,9 +39,9 @@ const Navbar = () => {
           </li>
           <li>
             <Link
-              to="/reserve"
+              to="/form"
               className={activeLink === 'reserve' ? 'active' : ''}
-              onClick={() => handleLinkClick('reserve')}
+              onClick={() => handleLinkClick('form')}
             >
               Reserve
             </Link>
