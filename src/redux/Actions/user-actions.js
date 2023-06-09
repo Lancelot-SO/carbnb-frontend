@@ -1,7 +1,7 @@
 import { userActions } from '../Slices/user-slice';
 
 export const fetchUser = (username) => async (dispatch) => {
-  const response = await fetch(`http://127.0.0.1:3000/api/v1/login/:${username}`);
+  const response = await fetch(`http://127.0.0.1:3000/api/v1/login/${username}`);
   const data = await response.json();
   console.log(data);
 
@@ -19,7 +19,7 @@ export const fetchUser = (username) => async (dispatch) => {
 };
 
 export const registerUser = (name, username) => async (dispatch) => {
-  const response = await fetch(`http://127.0.0.1:3000/api/v1/register/:${username}/:${name}`, {
+  const response = await fetch(`http://127.0.0.1:3000/api/v1/register/${username}/${name}`, {
     method: 'POST',
   });
   const data = await response.json();
