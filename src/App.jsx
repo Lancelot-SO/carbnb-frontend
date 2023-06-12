@@ -6,6 +6,7 @@ import SampleForm from './components/form_structure/form';
 import Register from './components/Login/Register';
 // eslint-disable-next-line import/no-duplicates
 import Navbar from './components/navbar/Navbar';
+import ReservationsPage from './pages/ReservationsPage';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
       />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/reservationpage" element={<ReservationsPage />} />
       <Route path="/form" element={<SampleForm />} />
     </Routes>
 

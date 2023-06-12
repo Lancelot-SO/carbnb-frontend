@@ -28,7 +28,7 @@ const Navbar = () => (
           <NavLink exact to="/reserve" activeclassame="activeClicked">
             <CDBSidebarMenuItem icon="table">Reserve</CDBSidebarMenuItem>
           </NavLink>
-          <NavLink exact to="/reservations" activeclassname="activeClicked">
+          <NavLink exact to="/reservationpage" activeclassname="activeClicked">
             <CDBSidebarMenuItem icon="chart-line">My Reservations</CDBSidebarMenuItem>
           </NavLink>
 
