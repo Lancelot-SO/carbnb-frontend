@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import './add-car.css';
 // import { createCar } from '../redux/motorcycles/motorcycles';
 
@@ -12,17 +12,17 @@ const AddCar = () => {
   const [engineType, setEngineType] = useState('');
   const [fuelType, setFuelType] = useState('');
 
-//   const createNewCar = (name) => ({
-//     name,
-//     description,
-//     imageUrl,
-//     price,
-//     modelYear,
-//     engineType,
-//     fuelType,
-//   });
+  //   const createNewCar = (name) => ({
+  //     name,
+  //     description,
+  //     imageUrl,
+  //     price,
+  //     modelYear,
+  //     engineType,
+  //     fuelType,
+  //   });
 
-//   const dispatch = useDispatch();
+  //   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
