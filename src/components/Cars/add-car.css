@@ -77,3 +77,14 @@ input[type="date"] {
 .form-container button:hover {
   background-color: #45a049;
 }
+
+@media only screen and (max-width: 640px) {
+  .form-container {
+    max-width: 100%;
+  }
+
+  .form-container input,
+  .form-container button {
+    width: 100%;
+  }
+}
