@@ -1,0 +1,139 @@
+.home-container-outer {
+  width: 80%;
+  padding: 2rem;
+  max-height: 80vh;
+  min-height: 0;
+  min-width: 0;
+}
+
+.home-container-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2.5rem;
+}
+
+.home-title-container {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-self: center;
+  align-items: center;
+  text-align: center;
+}
+
+.home-title {
+  padding-bottom: 2rem;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.home-description {
+  padding-bottom: 0.75rem;
+  padding-top: 0.5rem;
+  font-size: 16px;
+  color: var(--color-primary);
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  margin: 20px auto;
+}
+
+.swiper-wrapper {
+  max-height: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.swiper-pagination {
+  padding: 10px 0;
+}
+
+.append-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.append-buttons button {
+  display: inline-block;
+  cursor: pointer;
+  color: var(--color-secondary);
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin: 0 10px;
+  font-size: 13px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 0;
+  width: auto;
+  flex-shrink: 0;
+  height: 100%;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: auto;
+  height: 40vh;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.car-swiper-slide-text > div {
+  font-size: 18px;
+}
+
+.car-name {
+  font-weight: bold;
+  padding-top: 0.75rem;
+}
+
+.car-model,
+.car-description {
+  font-weight: bold;
+  font-size: 15px;
+  color: var(--color-primary);
+}
+
+.car-model {
+  padding-top: 0.75rem;
+}
+
+.car-description {
+  padding-bottom: 0.75rem;
+}
+
+.car-bottom-links {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-bottom: 2.5rem;
+  color: var(--color-primary);
+}
+
+.car-bottom-links > li {
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 874px) {
+  .home-container-outer {
+    width: 100%;
+  }
+}
