@@ -30,7 +30,19 @@ function App() {
       />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route path="/addCar" element={<AddCar />} />
+      <Route
+        path="/addCar"
+        element={(
+          <div className="homepage-container">
+            <div className="navbar-container">
+              <Navbar />
+            </div>
+            <div className="home-container">
+              <AddCar />
+            </div>
+          </div>
+)}
+      />
       <Route path="/reserve" element={<AddReservation />} />
       <Route path="/form" element={<SampleForm />} />
     </Routes>
