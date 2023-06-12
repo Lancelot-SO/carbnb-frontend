@@ -50,6 +50,7 @@ const AddCar = () => {
 
   return (
     <div className="form-container">
+      <h2>Add Car</h2>
       <form onSubmit={handleSubmit}>
         <input placeholder="Name" type="text" name="Name" value={name} onChange={(e) => setName(e.target.value)} required />
         <input placeholder="Description" type="text" name="Description" value={description} onChange={(e) => setDescription(e.target.value)} required />

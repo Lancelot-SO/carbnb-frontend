@@ -32,7 +32,7 @@ const Navbar = () => (
             <CDBSidebarMenuItem icon="chart-line">My Reservations</CDBSidebarMenuItem>
           </NavLink>
 
-          <NavLink exact to="/addCars" activeclassname="activeClicked">
+          <NavLink exact to="/addCar" activeclassname="activeClicked">
             <CDBSidebarMenuItem icon="car">Add Cars</CDBSidebarMenuItem>
           </NavLink>
 
