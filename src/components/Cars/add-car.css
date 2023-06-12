@@ -1,0 +1,33 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  width: 75%;
+}
+
+.form-container label {
+  padding: 0.8rem 1rem 0;
+  color: #9ca3af;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: -3rem;
+}
+
+input[type="text"],
+input[type="integer"],
+input[type="url"],
+input[type="number"],
+input[type="username"],
+select,
+input[type="date"] {
+  padding: 1rem;
+  border: none;
+  border-bottom: 1px solid #acacac;
+  width: 65%;
+}
