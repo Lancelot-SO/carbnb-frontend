@@ -1,92 +1,57 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+/* eslint-disable max-len */
+import React from 'react';
+import { FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import {
+  CDBSidebar, CDBSidebarContent, CDBSidebarFooter, CDBSidebarHeader, CDBSidebarMenu, CDBSidebarMenuItem,
+} from 'cdbreact';
 import './Navbar.css';
-import { BsFacebook } from 'react-icons/bs';
-import logo from '../../assets/logo.svg';
+import { NavLink } from 'react-router-dom';
 
-const Navbar = () => {
-  const [activeLink, setActiveLink] = useState('');
+const Navbar = () => (
+  <div style={{ display: 'flex', height: '100vh', overflow: 'scroll initial' }}>
+    <CDBSidebar textColor="#fff" backgroundColor="#333">
+      <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large" />}>
+        <a href="/" className="text-decoration-none" style={{ color: 'inherit' }}>
+          CarBnB
+        </a>
+      </CDBSidebarHeader>
 
-  const handleLinkClick = (link) => {
-    setActiveLink(link);
-  };
+      <CDBSidebarContent className="sidebar-content">
+        <CDBSidebarMenu style={{ paddingTop: '100px' }}>
+          <NavLink exact to="/" activeclassname="activeClicked">
+            <CDBSidebarMenuItem icon="columns">Home</CDBSidebarMenuItem>
+          </NavLink>
+          <NavLink exact to="/cars" activeclassname="activeClicked">
+            <CDBSidebarMenuItem icon="car">Cars</CDBSidebarMenuItem>
+          </NavLink>
+          <NavLink exact to="/reserve" activeclassame="activeClicked">
+            <CDBSidebarMenuItem icon="table">Reserve</CDBSidebarMenuItem>
+          </NavLink>
+          <NavLink exact to="/reservations" activeclassname="activeClicked">
+            <CDBSidebarMenuItem icon="chart-line">My Reservations</CDBSidebarMenuItem>
+          </NavLink>
 
-  return (
-    <div className="sidebar">
-      <div className="logo">
-        <img src={logo} alt="Logo" />
-        <h2>CarBnB</h2>
-      </div>
-      <nav className="navigation">
-        <ul>
-          <li>
-            <Link
-              to="/home"
-              className={activeLink === 'home' ? 'active' : ''}
-              onClick={() => handleLinkClick('home')}
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/cars"
-              className={activeLink === 'cars' ? 'active' : ''}
-              onClick={() => handleLinkClick('cars')}
-            >
-              Cars
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/form"
-              className={activeLink === 'reserve' ? 'active' : ''}
-              onClick={() => handleLinkClick('form')}
-            >
-              Reserve
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/reservations"
-              className={activeLink === 'reservations' ? 'active' : ''}
-              onClick={() => handleLinkClick('reservations')}
-            >
-              Reservations
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/addcars"
-              className={activeLink === 'addcars' ? 'active' : ''}
-              onClick={() => handleLinkClick('addcars')}
-            >
-              Add Cars
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/delete"
-              className={activeLink === 'delete' ? 'active' : ''}
-              onClick={() => handleLinkClick('delete')}
-            >
-              Delete Cars
-            </Link>
-          </li>
-        </ul>
-      </nav>
-      <div className="social-icons">
-        <BsFacebook />
-        <BsFacebook />
-        <BsFacebook />
-        <BsFacebook />
-        <BsFacebook />
-      </div>
-      <div className="footer">
+          <NavLink exact to="/addCars" activeclassname="activeClicked">
+            <CDBSidebarMenuItem icon="car">Add Cars</CDBSidebarMenuItem>
+          </NavLink>
+
+          <NavLink exact to="/delete" activeclassname="activeClicked">
+            <CDBSidebarMenuItem icon="trash">Delete</CDBSidebarMenuItem>
+          </NavLink>
+        </CDBSidebarMenu>
+      </CDBSidebarContent>
+
+      <CDBSidebarFooter style={{ textAlign: 'start', marginLeft: '30px' }}>
+        <div style={{ padding: '20px 5px', gap: '50px' }}>
+          <FaFacebook size={18} />
+          <FaTwitter size={18} />
+          <FaLinkedin size={18} />
+        </div>
         <p>Copyright © 2021. All Rights Reserved.</p>
-      </div>
-    </div>
-  );
-};
+      </CDBSidebarFooter>
+    </CDBSidebar>
+  </div>
+);
 
 export default Navbar;
