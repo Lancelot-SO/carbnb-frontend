@@ -1,24 +1,18 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import SwiperCore, { Virtual, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchcars } from '../../redux/Actions/car-actions';
+import { useSelector } from 'react-redux';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import Navbar from '../navbar/Navbar';
 
 SwiperCore.use([Virtual, Navigation]);
 
 const Home = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchcars());
-  }, [dispatch]);
-
-  const cars = useSelector((state) => state.cars);
+  const cars = useSelector((state) => state.carSlice.cars);
 
   const breakpoints = {
     320: {
@@ -36,6 +30,7 @@ const Home = () => {
   };
   return (
     <>
+      <Navbar />
       <div className="home-container-outer">
         <div className="home-container-inner">
           <div className="home-title-container">
