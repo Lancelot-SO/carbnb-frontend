@@ -32,7 +32,6 @@ input[type="date"] {
   width: 65%;
 } */
 
-
 .form-container {
   max-width: 400px;
   margin: 0 auto;
@@ -42,7 +41,6 @@ input[type="date"] {
   color: green;
   margin-top: 20px;
   text-align: center;
-
 }
 
 .form-container form {
