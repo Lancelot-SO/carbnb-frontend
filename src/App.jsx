@@ -12,6 +12,7 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/navbar" element={<Navbar />} />
+      <Route path="/form" element={<SampleForm />} />
     </Routes>
 
   );

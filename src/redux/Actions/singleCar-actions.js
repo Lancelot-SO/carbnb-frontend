@@ -18,9 +18,21 @@ export const createNewCar = async (
   image,
 ) => {
   const response = await fetch(
-    `http://127.0.0.1:3000/api/v1/car/${userId}/${name}/${model}/${description}/${price}/${image}`,
+    'http://127.0.0.1:3000/api/v1/car',
     {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+
+      body: JSON.stringify({
+        userId,
+        name,
+        model,
+        description,
+        price,
+        image,
+      }),
     },
   );
   const data = await response.json();
