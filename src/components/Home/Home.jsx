@@ -7,7 +7,6 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import Navbar from '../navbar/Navbar';
 
 SwiperCore.use([Virtual, Navigation]);
 
@@ -30,7 +29,6 @@ const Home = () => {
   };
   return (
     <>
-      <Navbar />
       <div className="home-container-outer">
         <div className="home-container-inner">
           <div className="home-title-container">

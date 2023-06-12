@@ -3,3 +3,16 @@ body {
   position: relative;
   height: 100%;
 }
+
+.homepage-container {
+  display: flex;
+}
+
+.homepage-container .navbar-container {
+  flex: 0 0 300px; /* Adjust the width as needed */
+}
+
+.homepage-container .home-container {
+  flex: 1;
+  padding: 20px;
+}

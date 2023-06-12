@@ -5,6 +5,7 @@ import { FaFacebook, FaTwitter, FaLinkedin } from 'react-icons/fa';
 import {
   CDBSidebar, CDBSidebarContent, CDBSidebarFooter, CDBSidebarHeader, CDBSidebarMenu, CDBSidebarMenuItem,
 } from 'cdbreact';
+import './Navbar.css';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => (
@@ -18,23 +19,24 @@ const Navbar = () => (
 
       <CDBSidebarContent className="sidebar-content">
         <CDBSidebarMenu style={{ paddingTop: '100px' }}>
-          <NavLink exact to="/" activeClassName="activeClicked">
+          <NavLink exact to="/" activeclassname="activeClicked">
             <CDBSidebarMenuItem icon="columns">Home</CDBSidebarMenuItem>
           </NavLink>
-          <NavLink exact to="/cars" activeClassName="activeClicked">
+          <NavLink exact to="/cars" activeclassname="activeClicked">
             <CDBSidebarMenuItem icon="car">Cars</CDBSidebarMenuItem>
           </NavLink>
-          <NavLink exact to="/reserve" activeClassName="activeClicked">
+          <NavLink exact to="/reserve" activeclassame="activeClicked">
             <CDBSidebarMenuItem icon="table">Reserve</CDBSidebarMenuItem>
           </NavLink>
-          <NavLink exact to="/reservations" activeClassName="activeClicked">
+          <NavLink exact to="/reservations" activeclassname="activeClicked">
             <CDBSidebarMenuItem icon="chart-line">My Reservations</CDBSidebarMenuItem>
           </NavLink>
 
-          <NavLink exact to="/addCars" activeClassName="activeClicked">
+          <NavLink exact to="/addCars" activeclassname="activeClicked">
             <CDBSidebarMenuItem icon="car">Add Cars</CDBSidebarMenuItem>
           </NavLink>
-          <NavLink exact to="/delete" activeClassName="activeClicked">
+
+          <NavLink exact to="/delete" activeclassname="activeClicked">
             <CDBSidebarMenuItem icon="trash">Delete</CDBSidebarMenuItem>
           </NavLink>
         </CDBSidebarMenu>
