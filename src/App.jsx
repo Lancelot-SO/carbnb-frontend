@@ -8,6 +8,7 @@ import Register from './components/Login/Register';
 import Navbar from './components/navbar/Navbar';
 import AddCar from './components/Cars/add-car';
 import AddReservation from './components/Reservations/add-reservations';
+import MyReservations from './pages/MyReservations';
 
 function App() {
   return (
@@ -43,7 +44,32 @@ function App() {
           </div>
 )}
       />
-      <Route path="/reserve" element={<AddReservation />} />
+      <Route
+        path="/reservations"
+        element={(
+          <div className="homepage-container">
+            <div className="navbar-container">
+              <Navbar />
+            </div>
+            <div className="home-container">
+              <MyReservations />
+            </div>
+          </div>
+)}
+      />
+      <Route
+        path="/reserve"
+        element={(
+          <div className="homepage-container">
+            <div className="navbar-container">
+              <Navbar />
+            </div>
+            <div className="home-container">
+              <AddReservation />
+            </div>
+          </div>
+)}
+      />
       <Route path="/form" element={<SampleForm />} />
     </Routes>
 

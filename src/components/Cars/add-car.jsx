@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 // import { useDispatch } from 'react-redux';
 import './add-car.css';
+import { useSelector } from 'react-redux';
+import { createNewCar } from '../../redux/Actions/singleCar-actions';
 // import { createCar } from '../redux/motorcycles/motorcycles';
 
 const AddCar = () => {
@@ -9,8 +11,7 @@ const AddCar = () => {
   const [imageUrl, setImageUrl] = useState('');
   const [price, setPrice] = useState(0);
   const [modelYear, setModelYear] = useState(0);
-  const [engineType, setEngineType] = useState('');
-  const [fuelType, setFuelType] = useState('');
+  const userId = useSelector((state) => state.userSlice.user.id);
 
   //   const createNewCar = (name) => ({
   //     name,
@@ -26,23 +27,13 @@ const AddCar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const car = createNewCar(
-    //   name,
-    //   description,
-    //   imageUrl,
-    //   price,
-    //   modelYear,
-    //   engineType,
-    //   fuelType,
-    // );
-    // dispatch(createCar(car));
+    createNewCar(userId, name, modelYear, description, price, imageUrl);
+
     setName('');
     setDescription('');
     setImageUrl('');
     setPrice(0);
     setModelYear(0);
-    setEngineType('');
-    setFuelType('');
     setTimeout(() => {
       window.location.href = '/';
     }, 300);
@@ -59,8 +50,6 @@ const AddCar = () => {
         <input id="price" placeholder="Price" type="number" name="Price" value={price} onChange={(e) => setPrice(e.target.value)} required />
         <label htmlFor="year">Model year</label>
         <input id="year" placeholder="Model year" type="number" name="Year" value={modelYear} onChange={(e) => setModelYear(e.target.value)} required />
-        <input placeholder="Engine type" type="text" name="EngineType" value={engineType} onChange={(e) => setEngineType(e.target.value)} required />
-        <input placeholder="Fuel type" type="text" name="FuelType" value={fuelType} onChange={(e) => setFuelType(e.target.value)} required />
         <div className="btn-group">
           <button type="submit">Add Car</button>
         </div>

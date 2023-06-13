@@ -1,9 +1,12 @@
 import { userActions } from '../Slices/user-slice';
+import { Login } from '../../config';
 
 export const fetchUser = (username) => async (dispatch) => {
   const response = await fetch(`http://127.0.0.1:3000/api/v1/login/${username}`);
   const data = await response.json();
   console.log(data);
+
+  Login(username);
 
   const { user } = data;
   const loggedIn = data.logged_in;
