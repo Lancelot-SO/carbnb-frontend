@@ -6,13 +6,9 @@ body {
 
 .homepage-container {
   display: flex;
-}
-
-.homepage-container .navbar-container {
-  flex: 0 0 300px; /* Adjust the width as needed */
-}
-
-.homepage-container .home-container {
-  flex: 1;
-  padding: 20px;
+  flex-direction: row;
+  height: 100vh;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
 }
