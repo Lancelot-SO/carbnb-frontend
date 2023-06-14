@@ -1,39 +1,43 @@
 import React, { useState } from 'react';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import './add-car.css';
-import { useSelector } from 'react-redux';
-import { createNewCar } from '../../redux/Actions/singleCar-actions';
-// import { createCar } from '../redux/motorcycles/motorcycles';
+import { addCar } from '../../redux/Actions/car-actions';
 
 const AddCar = () => {
   const [name, setName] = useState('');
+  const [user, setUser] = useState('');
   const [description, setDescription] = useState('');
   const [imageUrl, setImageUrl] = useState('');
   const [price, setPrice] = useState(0);
-  const [modelYear, setModelYear] = useState(0);
-  const userId = useSelector((state) => state.userSlice.user.id);
+  const [model, setModel] = useState('');
 
-  //   const createNewCar = (name) => ({
-  //     name,
-  //     description,
-  //     imageUrl,
-  //     price,
-  //     modelYear,
-  //     engineType,
-  //     fuelType,
-  //   });
+  const createNewCar = (name) => ({
+    user,
+    name,
+    description,
+    imageUrl,
+    price,
+    model,
+  });
 
-  //   const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    createNewCar(userId, name, modelYear, description, price, imageUrl);
-
+    const car = createNewCar(
+      user,
+      name,
+      description,
+      imageUrl,
+      price,
+      model
+    );
+    dispatch(addCar(car));
     setName('');
     setDescription('');
     setImageUrl('');
     setPrice(0);
-    setModelYear(0);
+    setModel('');
     setTimeout(() => {
       window.location.href = '/';
     }, 300);
@@ -46,10 +50,10 @@ const AddCar = () => {
         <input placeholder="Name" type="text" name="Name" value={name} onChange={(e) => setName(e.target.value)} required />
         <input placeholder="Description" type="text" name="Description" value={description} onChange={(e) => setDescription(e.target.value)} required />
         <input placeholder="Image URL" type="url" name="ImageUrl" value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} required />
+        <input id="model" placeholder="Model" type="text" name="Model" value={model} onChange={(e) => setModel(e.target.value)} required />
         <label htmlFor="price">Price</label>
         <input id="price" placeholder="Price" type="number" name="Price" value={price} onChange={(e) => setPrice(e.target.value)} required />
-        <label htmlFor="year">Model year</label>
-        <input id="year" placeholder="Model year" type="number" name="Year" value={modelYear} onChange={(e) => setModelYear(e.target.value)} required />
+        <label htmlFor="year">Model</label>
         <div className="btn-group">
           <button type="submit">Add Car</button>
         </div>
