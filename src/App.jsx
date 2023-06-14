@@ -9,6 +9,7 @@ import Navbar from './components/navbar/Navbar';
 import AddCar from './components/Cars/add-car';
 import AddReservation from './components/Reservations/add-reservations';
 import MyReservations from './pages/MyReservations';
+import DeletePage from './pages/DeletePage';
 
 function App() {
   return (
@@ -66,6 +67,19 @@ function App() {
             </div>
             <div className="home-container">
               <AddReservation />
+            </div>
+          </div>
+)}
+      />
+      <Route
+        path="/delete"
+        element={(
+          <div className="homepage-container">
+            <div className="navbar-container">
+              <Navbar />
+            </div>
+            <div className="home-container">
+              <DeletePage />
             </div>
           </div>
 )}
