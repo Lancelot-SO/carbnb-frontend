@@ -1,3 +1,6 @@
+import { createSlice } from '@reduxjs/toolkit';
+import { fetchUserCars, fetchcars } from '../Actions/car-actions';
+
 export const carSlice = createSlice({
   name: 'cars',
   initialState: [],
@@ -8,7 +11,7 @@ export const carSlice = createSlice({
   },
   extraReducers(builder) {
     builder
-      .addCase(fetchcars.fulfilled, (state, action) => {
+      .addCase(fetchcars.fulfilled, (_state, action) => {
         const ids = Object.keys(action.payload);
         const newState = ids.map((id) => ({
           id: action.payload[id].id,
@@ -20,6 +23,9 @@ export const carSlice = createSlice({
           model: action.payload[id].model,
         }));
         return newState;
+      })
+      .addCase(fetchUserCars.fulfilled, (state, { payload }) => {
+        state.push(payload);
       });
   },
 });
