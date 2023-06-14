@@ -5,7 +5,9 @@ import { addCar } from '../../redux/Actions/car-actions';
 
 const AddCar = () => {
   const [name, setName] = useState('');
-  const [user, setUser] = useState('');
+  // to be changed
+  const user = '';
+  // const [user, setUser] = useState('');
   const [description, setDescription] = useState('');
   const [imageUrl, setImageUrl] = useState('');
   const [price, setPrice] = useState(0);
@@ -30,7 +32,7 @@ const AddCar = () => {
       description,
       imageUrl,
       price,
-      model
+      model,
     );
     dispatch(addCar(car));
     setName('');
@@ -53,7 +55,7 @@ const AddCar = () => {
         <input id="model" placeholder="Model" type="text" name="Model" value={model} onChange={(e) => setModel(e.target.value)} required />
         <label htmlFor="price">Price</label>
         <input id="price" placeholder="Price" type="number" name="Price" value={price} onChange={(e) => setPrice(e.target.value)} required />
-        <label htmlFor="year">Model</label>
+        <label htmlFor="model">Model</label>
         <div className="btn-group">
           <button type="submit">Add Car</button>
         </div>

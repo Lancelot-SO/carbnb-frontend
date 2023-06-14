@@ -6,6 +6,7 @@ export const carSlice = createSlice({
   initialState: [],
   reducers: {
     clearCars: (state) => {
+      // eslint-disable-next-line no-param-reassign
       state.length = 0;
     },
   },

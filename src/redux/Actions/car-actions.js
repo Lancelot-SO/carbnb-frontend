@@ -29,7 +29,7 @@ export const addCar = createAsyncThunk(
   'cars/addcars',
   async (car) => {
     const {
-      user, name, description, imageUrl, price, model
+      user, name, description, imageUrl, price, model,
     } = car;
     try {
       await axios.post(

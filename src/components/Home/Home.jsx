@@ -1,5 +1,5 @@
-import React from 'react';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
+
 import SwiperCore, { Virtual, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
@@ -73,7 +73,11 @@ const Home = () => {
                     />
                     <div className="car-swiper-slide-text">
                       <div>
-                        <h1 className="car-name">{slideContent.model} {slideContent.name}</h1>
+                        <h1 className="car-name">
+                          {slideContent.model}
+                          {' '}
+                          {slideContent.name}
+                        </h1>
                         <h4 className="car-model">{slideContent.price}</h4>
                         <p className="car-description">
                           {slideContent.description}
