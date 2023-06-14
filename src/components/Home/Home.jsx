@@ -1,17 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+
 import SwiperCore, { Virtual, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchcars } from '../../redux/Actions/car-actions';
+import { clearCars } from '../../redux/Slices/car-slice';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import './Home.css';
 
 SwiperCore.use([Virtual, Navigation]);
 
 const Home = () => {
-  const cars = useSelector((state) => state.carSlice.cars);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(clearCars());
+    dispatch(fetchcars());
+  }, [dispatch]);
+
+  const cars = useSelector((state) => state.carSlice);
+  console.log(cars);
 
   const breakpoints = {
     320: {
@@ -23,8 +35,12 @@ const Home = () => {
       spaceBetween: 20,
     },
     1124: {
-      slidesPerView: 3,
+      slidesPerView: 2,
       spaceBetween: 25,
+    },
+    1324: {
+      slidesPerView: 3,
+      spaceBetween: 30,
     },
   };
   return (
@@ -48,17 +64,21 @@ const Home = () => {
           >
             {cars.map((slideContent, index) => (
               <SwiperSlide key={slideContent.id}>
-                <Link to={`/motorcycles/${slideContent.id}`} state={slideContent}>
-                  <div className="border-none swiper-slide-content rounded-xl">
+                <Link to={`/cars/${slideContent.id}`} state={slideContent}>
+                  <div className="swiper-slide-content">
                     <img
-                      src={slideContent.image}
-                      className=""
+                      src={slideContent.imageUrl}
+                      className="swiper-slide-img"
                       alt={`Slide ${index + 1}, ${slideContent.name}`}
                     />
                     <div className="car-swiper-slide-text">
                       <div>
-                        <h1 className="car-name">{slideContent.name}</h1>
-                        <h4 className="car-model">{slideContent.model}</h4>
+                        <h1 className="car-name">
+                          {slideContent.model}
+                          {' '}
+                          {slideContent.name}
+                        </h1>
+                        <h4 className="car-model">{slideContent.price}</h4>
                         <p className="car-description">
                           {slideContent.description}
                         </p>

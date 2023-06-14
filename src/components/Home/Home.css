@@ -1,4 +1,4 @@
-.home-container-outer {
+.home-container {
   width: 80%;
   padding: 2rem;
   max-height: 80vh;
@@ -11,7 +11,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 2.5rem;
+  padding-top: 0.25rem;
 }
 
 .home-title-container {
@@ -38,19 +38,37 @@
 }
 
 .swiper {
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  padding-right: 0;
+  padding-left: 0;
+  z-index: 1;
+  display: block;
   width: 100%;
   height: 100%;
   margin: 20px auto;
 }
 
 .swiper-wrapper {
-  max-height: 100%;
+  position: relative;
+  width: 100%;
   height: 100%;
+  z-index: 1;
   display: flex;
+  transition-property: transform;
+  box-sizing: content-box;
+  max-height: 100%;
 }
 
 .swiper-pagination {
   padding: 10px 0;
+}
+
+.swiper-slide-content {
+  border-style: none;
+  border-radius: 0.75rem;
 }
 
 .append-buttons {
@@ -85,12 +103,12 @@
   align-items: center;
 }
 
-.swiper-slide img {
+.swiper-slide-img {
   display: block;
-  width: auto;
   height: 40vh;
   object-fit: cover;
   border-radius: 1rem;
+  width: 100%;
 }
 
 .car-swiper-slide-text > div {
@@ -98,14 +116,15 @@
 }
 
 .car-name {
-  font-weight: bold;
+  font-size: 22px;
   padding-top: 0.75rem;
+  font-weight: 700;
 }
 
 .car-model,
 .car-description {
-  font-weight: bold;
-  font-size: 15px;
+  font-weight: 700;
+  font-size: 0.875rem;
   color: var(--color-primary);
 }
 
@@ -123,7 +142,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 1.25rem;
   margin-bottom: 2.5rem;
   color: var(--color-primary);
 }
