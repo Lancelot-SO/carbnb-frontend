@@ -6,21 +6,6 @@ import { fetchcars } from '../redux/Actions/car-actions';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const DeletePage = () => {
-//   const [cars, setCars] = useState([]);
-
-  //   useEffect(() => {
-  //     const fetchData = async () => {
-  //       try {
-  //         const response = await fetch('http://127.0.0.1:3000/api/v1/car');
-  //         const data = await response.json();
-  //         setCars(data);
-  //       } catch (error) {
-  //         console.log('Error fetching car data:', error);
-  //       }
-  //     };
-
-  //     fetchData();
-  //   }, [handleDelete]);
   const [deleted, setDeleted] = useState(false);
 
   const dispatch = useDispatch();
