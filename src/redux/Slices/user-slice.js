@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
-
+import { fetchUsers } from '../Actions/user-actions';
 const userSlice = createSlice({
   name: 'User',
   initialState: {
     user: {},
     loggedIn: false,
+    users: []
   },
   reducers: {
     loginUser(state, actions) {
@@ -13,6 +14,12 @@ const userSlice = createSlice({
       // eslint-disable-next-line no-param-reassign
       state.loggedIn = actions.payload.loggedIn;
     },
+  },
+  extraReducers(builder) {
+    builder
+      .addCase(fetchUsers.fulfilled, (state, { payload }) => {
+        state.users.push(payload);
+      });
   },
 });
 

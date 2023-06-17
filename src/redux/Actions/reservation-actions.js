@@ -1,29 +1,33 @@
-import { reservationActions } from '../Slices/reservation-slice';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-export const createReservation = async (userId, carId, date, city) => {
-  const response = await fetch('http://127.0.0.1:3000/api/v1/reservation', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
+export const createReservation = createAsyncThunk(
+  'reservations/createReservations',
+  async (reservation) => {
+    const {userId, carId, city, date} = reservation;
+    try {
+      axios.post(
+        'http://127.0.0.1:3000/api/v1/reservation',
+        {
+          user_id: userId,
+          car_id: carId,
+          city,
+          date,
+        }
+      )
+      return reservation;
+    }
+    catch(err) {
+      return err.message;
+    }
+  }
+)
 
-    body: JSON.stringify({
-      userId,
-      carId,
-      city,
-      date,
-    }),
-  });
-  const data = await response.json();
-  console.log(data);
-};
-
-export const viewMyReservations = (userId) => async (dispatch) => {
-  const response = await fetch(`http://127.0.0.1:3000/api/v1/reservation/${userId}`);
-  const data = await response.json();
-  console.log(data);
-
-  const { reservations } = data;
-
-  dispatch(reservationActions.allReservations(reservations));
-};
+export const viewReservations = createAsyncThunk(
+  'reservations/viewMyReservations',
+  async () => {
+    const res = await axios.get(`http://127.0.0.1:3000/api/v1/reservations/`);
+    return res.data;
+    console.log(res.data);
+  }
+)

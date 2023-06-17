@@ -1,5 +1,20 @@
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 import { userActions } from '../Slices/user-slice';
 import { Login } from '../../config';
+
+export const fetchUsers = createAsyncThunk(
+  'users/allUsers',
+  async () => {
+    try {
+      const res = await axios.get('http://127.0.0.1:3000/users/index');
+      return res.data;
+    }
+    catch(err) {
+      return err.message;
+    }
+  }
+)
 
 export const fetchUser = (username) => async (dispatch) => {
   const response = await fetch(`http://127.0.0.1:3000/api/v1/login/${username}`);
