@@ -1,16 +1,26 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Table } from 'react-bootstrap';
-import { viewMyReservations } from '../redux/Actions/reservation-actions';
+import { viewReservations } from '../redux/Actions/reservation-actions';
+import { fetchUsers } from '../redux/Actions/user-actions';
+import { fetchcars } from '../redux/Actions/car-actions';
+import Reserve from '../components/Reservations/reserve';
 
 const MyReservations = () => {
   const dispatch = useDispatch();
-  const reservations = useSelector((state) => state.reservationSlice.Reservations);
+  // const [reservedCar, setReservedCar] = useState({});
+  const reservedCars = [];
 
   useEffect(() => {
-    dispatch(viewMyReservations());
-    // Fetch reservations for the specific user
+    dispatch(viewReservations());
+    dispatch(fetchUsers());
+    dispatch(fetchcars());
   }, [dispatch]);
+
+  const reservations = useSelector((state) => state.reservationSlice[0]?.reservations);
+  const users = useSelector((state) => state.userSlice.users[0]);
+  const user = users?.find((user) => user.username === JSON.parse(localStorage.getItem('user'))) || 0;
+  const userReservations = reservations?.filter(reservation => reservation.user_id === user?.id);
 
   return (
     <div className="container py-4">
@@ -18,19 +28,15 @@ const MyReservations = () => {
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>Car ID</th>
+            <th>Car Name</th>
             <th>Date</th>
             <th>City</th>
           </tr>
         </thead>
         <tbody>
-          {reservations && reservations.length > 0 ? (
-            reservations.map((reservation) => (
-              <tr key={reservation.id}>
-                <td>{reservation.carId}</td>
-                <td>{reservation.date}</td>
-                <td>{reservation.city}</td>
-              </tr>
+          {userReservations && userReservations?.length > 0 ? (
+            userReservations.map((reserve) => (
+              <Reserve key={reserve.id} reserve={reserve} />
             ))
           ) : (
             <tr>
