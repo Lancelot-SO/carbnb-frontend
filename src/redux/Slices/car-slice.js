@@ -24,7 +24,7 @@ export const carSlice = createSlice({
           model: action.payload[id].model,
         }));
         return newState;
-      })
+      });
   },
 });
 

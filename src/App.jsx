@@ -31,17 +31,20 @@ function App() {
           </>
           )}
       />
-      <Route path="/cars/:id" element={
-        <>
-         <div className="details-container-wrap">
-           <div className="navbar-container">
-              <Navbar />
-           </div>
-         <CarDetails />
-         </div>
-        </>
-      } />
-      <Route path="/login" element={<Login />}  />
+      <Route
+        path="/cars/:id"
+        element={(
+          <>
+            <div className="details-container-wrap">
+              <div className="navbar-container">
+                <Navbar />
+              </div>
+              <CarDetails />
+            </div>
+          </>
+      )}
+      />
+      <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route
         path="/addCar"

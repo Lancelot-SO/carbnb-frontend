@@ -11,8 +11,8 @@ export const reservationSlice = createSlice({
       })
       .addCase(createReservation.fulfilled, (state, { payload }) => {
         state.push(payload);
-      })
-  }
+      });
+  },
 });
 
 const { reducer } = reservationSlice;

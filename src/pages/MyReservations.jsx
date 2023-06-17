@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Table } from 'react-bootstrap';
 import { viewReservations } from '../redux/Actions/reservation-actions';
@@ -8,8 +8,6 @@ import Reserve from '../components/Reservations/reserve';
 
 const MyReservations = () => {
   const dispatch = useDispatch();
-  // const [reservedCar, setReservedCar] = useState({});
-  const reservedCars = [];
 
   useEffect(() => {
     dispatch(viewReservations());
@@ -18,9 +16,9 @@ const MyReservations = () => {
   }, [dispatch]);
 
   const reservations = useSelector((state) => state.reservationSlice[0]?.reservations);
-  const users = useSelector((state) => state.userSlice.users[0]);
+  const users = useSelector((state) => state.usersSlice.users[0]);
   const user = users?.find((user) => user.username === JSON.parse(localStorage.getItem('user'))) || 0;
-  const userReservations = reservations?.filter(reservation => reservation.user_id === user?.id);
+  const userReservations = reservations?.filter((reservation) => reservation.user_id === user?.id);
 
   return (
     <div className="container py-4">

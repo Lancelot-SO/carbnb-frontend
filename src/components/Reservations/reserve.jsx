@@ -12,7 +12,11 @@ const Reserve = ({
     return (
       <>
         <tr key={reserve.id}>
-          <td>{reservedCar.model} {reservedCar.name}</td>
+          <td>
+            {reservedCar.model}
+            {' '}
+            {reservedCar.name}
+          </td>
           <td>{reserve.date}</td>
           <td>{reserve.city}</td>
         </tr>

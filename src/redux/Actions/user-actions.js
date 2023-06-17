@@ -9,12 +9,11 @@ export const fetchUsers = createAsyncThunk(
     try {
       const res = await axios.get('http://127.0.0.1:3000/users/index');
       return res.data;
-    }
-    catch(err) {
+    } catch (err) {
       return err.message;
     }
-  }
-)
+  },
+);
 
 export const fetchUser = (username) => async (dispatch) => {
   const response = await fetch(`http://127.0.0.1:3000/api/v1/login/${username}`);
@@ -49,7 +48,6 @@ export const registerUser = (name, username) => async (dispatch) => {
     }),
   });
   const data = await response.json();
-  console.log(data);
 
   const { user } = data;
   const loggedIn = data.logged_in;

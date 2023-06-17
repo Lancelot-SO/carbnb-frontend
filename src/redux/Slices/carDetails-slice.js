@@ -14,7 +14,7 @@ export const carDetailsSlice = createSlice({
     builder
       .addCase(fetchUserCars.fulfilled, (state, { payload }) => {
         state.push(payload);
-      })
+      });
   },
 });
 

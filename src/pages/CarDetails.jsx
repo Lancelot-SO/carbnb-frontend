@@ -1,12 +1,10 @@
-import React from 'react'
+import React from 'react';
 import Details from '../components/Cars/details';
 
-const CarDetails = () => {
-  return (
-    <>
-      <Details />
-    </>
-  )
-}
+const CarDetails = () => (
+  <>
+    <Details />
+  </>
+);
 
 export default CarDetails;

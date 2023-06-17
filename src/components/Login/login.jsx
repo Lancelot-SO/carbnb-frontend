@@ -1,20 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import './Login.css';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { fetchUser } from '../../redux/Actions/user-actions';
+import './Login.css';
 
 const Login = () => {
   const [username, setUserName] = useState('');
-  const [loggedIn, setLoggedIn] = useState(false);
-
   const dispatch = useDispatch();
-  //const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
     dispatch(fetchUser(username));
-    setLoggedIn(localStorage.getItem('user') !== null);
   };
 
   return (

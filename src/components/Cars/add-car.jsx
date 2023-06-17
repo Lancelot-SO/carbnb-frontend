@@ -14,9 +14,8 @@ const AddCar = () => {
     dispatch(fetchUsers());
   }, [dispatch]);
 
-  
-  const users = useSelector((state) => state.userSlice.users[0]);
-  
+  const users = useSelector((state) => state.usersSlice.users[0]);
+
   useEffect(() => {
     setUser(users?.find((user) => user.username === JSON.parse(localStorage.getItem('user'))) || 0);
   }, [users]);
