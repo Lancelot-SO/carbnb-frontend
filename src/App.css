@@ -12,3 +12,13 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+
+.details-container-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 100vh;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+}

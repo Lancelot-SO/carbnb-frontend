@@ -1,6 +1,6 @@
 :root {
   --color-primary: #9ca3af;
-  --color-secondary: #22c55e;
+  --color-secondary: #dc2626;
   --color-white: #fff;
   --color-black: #000;
 }
@@ -26,4 +26,14 @@ a {
 
 li {
   list-style-type: none;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+select {
+  margin: 1rem 0;
+  padding: 2%;
 }
