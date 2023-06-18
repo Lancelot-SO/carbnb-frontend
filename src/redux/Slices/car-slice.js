@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchUserCars, fetchcars } from '../Actions/car-actions';
+import { fetchcars } from '../Actions/car-actions';
 
 export const carSlice = createSlice({
   name: 'cars',
@@ -24,9 +24,6 @@ export const carSlice = createSlice({
           model: action.payload[id].model,
         }));
         return newState;
-      })
-      .addCase(fetchUserCars.fulfilled, (state, { payload }) => {
-        state.push(payload);
       });
   },
 });

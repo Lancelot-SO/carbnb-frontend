@@ -14,7 +14,7 @@ const DeletePage = () => {
     dispatch(fetchcars());
     setDeleted(false);
   }, [dispatch, deleted]);
-  const cars = useSelector((state) => state.carSlice.cars);
+  const cars = useSelector((state) => state.carSlice);
 
   const handleDelete = (id) => {
     deleteCar(id);

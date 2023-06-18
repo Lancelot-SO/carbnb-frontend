@@ -1,19 +1,33 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './add-car.css';
 import { addCar } from '../../redux/Actions/car-actions';
+import { fetchUsers } from '../../redux/Actions/user-actions';
 
 const AddCar = () => {
+  const dispatch = useDispatch();
+
   const [name, setName] = useState('');
-  // to be changed
-  const user = '';
-  // const [user, setUser] = useState('');
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    dispatch(fetchUsers());
+  }, [dispatch]);
+
+  const users = useSelector((state) => state.usersSlice.users[0]);
+
+  useEffect(() => {
+    setUser(users?.find((user) => user.username === JSON.parse(localStorage.getItem('user'))) || 0);
+  }, [users]);
+
+  console.log(user);
+
   const [description, setDescription] = useState('');
   const [imageUrl, setImageUrl] = useState('');
   const [price, setPrice] = useState(0);
   const [model, setModel] = useState('');
 
-  const createNewCar = (name) => ({
+  const createNewCar = (user, name, description, imageUrl, price, model) => ({
     user,
     name,
     description,
@@ -22,12 +36,10 @@ const AddCar = () => {
     model,
   });
 
-  const dispatch = useDispatch();
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const car = createNewCar(
-      user,
+      user.id,
       name,
       description,
       imageUrl,
@@ -40,9 +52,6 @@ const AddCar = () => {
     setImageUrl('');
     setPrice(0);
     setModel('');
-    setTimeout(() => {
-      window.location.href = '/';
-    }, 300);
   };
 
   return (
@@ -55,7 +64,6 @@ const AddCar = () => {
         <input id="model" placeholder="Model" type="text" name="Model" value={model} onChange={(e) => setModel(e.target.value)} required />
         <label htmlFor="price">Price</label>
         <input id="price" placeholder="Price" type="number" name="Price" value={price} onChange={(e) => setPrice(e.target.value)} required />
-        <label htmlFor="model">Model</label>
         <div className="btn-group">
           <button type="submit">Add Car</button>
         </div>

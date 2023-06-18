@@ -1,18 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { createReservation, viewReservations } from '../Actions/reservation-actions';
 
-const reservationSlice = createSlice({
+export const reservationSlice = createSlice({
   name: 'Reservations',
-  initialState: {
-    Reservations: [],
-  },
-  reducers: {
-    allReservations(state, actions) {
-      // eslint-disable-next-line no-param-reassign
-      state.Reservations = actions.payload;
-    },
+  initialState: [],
+  extraReducers(builder) {
+    builder
+      .addCase(viewReservations.fulfilled, (state, { payload }) => {
+        state.push(payload);
+      })
+      .addCase(createReservation.fulfilled, (state, { payload }) => {
+        state.push(payload);
+      });
   },
 });
 
-export const reservationActions = reservationSlice.actions;
+const { reducer } = reservationSlice;
 
-export default reservationSlice.reducer;
+export default reducer;

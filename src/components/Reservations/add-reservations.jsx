@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchUser } from '../../redux/Actions/user-actions';
+import { fetchUsers } from '../../redux/Actions/user-actions';
 import { fetchcars } from '../../redux/Actions/car-actions';
 import { createReservation } from '../../redux/Actions/reservation-actions';
 
@@ -11,7 +11,7 @@ const AddReservation = () => {
   const selectedCarId = location.state?.id;
 
   useEffect(() => {
-    dispatch(fetchUser());
+    dispatch(fetchUsers());
   }, [dispatch]);
 
   const [date, setDate] = useState(undefined);
@@ -20,10 +20,10 @@ const AddReservation = () => {
   const [user, setUser] = useState('');
   const [notice, setNotice] = useState('');
 
-  const users = useSelector((state) => state.users);
+  const users = useSelector((state) => state.usersSlice.users[0]);
 
   useEffect(() => {
-    setUser(users?.find((user) => user.name === JSON.parse(localStorage.getItem('username'))) || 0);
+    setUser(users?.find((user) => user.username === JSON.parse(localStorage.getItem('user'))) || 0);
   }, [users]);
 
   const [options, setOptions] = useState([]);
@@ -36,7 +36,8 @@ const AddReservation = () => {
     city,
   });
 
-  const cars = useSelector((state) => state.cars);
+  const cars = useSelector((state) => state.carSlice);
+
   if (carId === '') {
     cars.forEach((car) => {
       carOptions.push(car);
@@ -93,7 +94,7 @@ const AddReservation = () => {
             <p id="message">{notice}</p>
           </div>
           <div className="btn-group">
-            <button type="submit" name="Submit Reservation">Book Now</button>
+            <button type="submit" name="Submit Reservation">Reserve Now</button>
           </div>
         </form>
       </div>

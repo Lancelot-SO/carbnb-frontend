@@ -17,7 +17,7 @@ export const fetchUserCars = createAsyncThunk(
   'cars/fetchcars',
   async (id) => {
     try {
-      const res = await axios.get(`http://127.0.0.1:3000/api/v1/cars/${id}`);
+      const res = await axios.get(`http://127.0.0.1:3000/api/v1/car/${id}`);
       return res.data;
     } catch (err) {
       return err.message;
@@ -33,19 +33,14 @@ export const addCar = createAsyncThunk(
     } = car;
     try {
       await axios.post(
-        'http://127.0.0.1:3000/api/v1/cars/',
+        'http://127.0.0.1:3000/api/v1/car/',
         {
-          car: {
-            user,
-            name,
-            description,
-            image: imageUrl,
-            price,
-            model,
-          },
-          headers: {
-            'Content-type': 'application/json; charset=UTF-8',
-          },
+          user_id: user,
+          name,
+          description,
+          image: imageUrl,
+          price,
+          model,
         },
       );
       return car;

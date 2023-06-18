@@ -23,7 +23,6 @@ const Home = () => {
   }, [dispatch]);
 
   const cars = useSelector((state) => state.carSlice);
-  console.log(cars);
 
   const breakpoints = {
     320: {

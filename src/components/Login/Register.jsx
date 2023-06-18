@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { loginUser, registerUser } from '../redux/users/users';
+import { useDispatch } from 'react-redux';
+import { registerUser } from '../../redux/Actions/user-actions';
 
 const Register = () => {
   const [name, setName] = useState('');
   const [username, setUserName] = useState('');
 
-  // to be changed based on a later state of the redux actions and reducers
-  // const dispatch = useDispatch();
-  // const error = useSelector((state) => state?.user.status);
+  const dispatch = useDispatch();
 
   const handleRegister = (e) => {
     e.preventDefault();
-    // dispatch
-    // registerUser(username);
+    dispatch(registerUser(name, username));
   };
 
   return (

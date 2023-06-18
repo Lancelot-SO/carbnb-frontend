@@ -10,6 +10,7 @@ import AddCar from './components/Cars/add-car';
 import AddReservation from './components/Reservations/add-reservations';
 import MyReservations from './pages/MyReservations';
 import DeletePage from './pages/DeletePage';
+import CarDetails from './pages/CarDetails';
 
 function App() {
   return (
@@ -29,6 +30,19 @@ function App() {
             </div>
           </>
           )}
+      />
+      <Route
+        path="/cars/:id"
+        element={(
+          <>
+            <div className="details-container-wrap">
+              <div className="navbar-container">
+                <Navbar />
+              </div>
+              <CarDetails />
+            </div>
+          </>
+      )}
       />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />

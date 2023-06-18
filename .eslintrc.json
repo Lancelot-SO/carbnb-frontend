@@ -28,7 +28,9 @@
         "required": {
           "some": ["nesting", "id"]
         }
-      }]
+      }],
+      "import/no-named-as-default": 0,
+      "react/prop-types": 0
     },
     "settings": {
       "react": {

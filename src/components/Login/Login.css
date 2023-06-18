@@ -31,7 +31,7 @@
 .login-btn {
   width: 150px;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #dc2626;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -40,7 +40,7 @@
 }
 
 .login-btn:hover {
-  background-color: #0056b3;
+  background-color: #d64747;
 }
 
 .form-container-login p {
@@ -49,7 +49,7 @@
 }
 
 .form-container-login a {
-  color: #007bff;
+  color: #dc2626;
   text-decoration: none;
 }
 
