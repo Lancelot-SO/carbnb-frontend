@@ -19,36 +19,39 @@ const Navbar = () => (
 
       <CDBSidebarContent className="sidebar-content">
         <CDBSidebarMenu style={{ paddingTop: '100px' }}>
-          <NavLink exact to="/" activeclassname="activeClicked">
+          <NavLink exact to="/" className={(link) => (link.isActive ? 'link active' : 'link')}>
             <CDBSidebarMenuItem icon="columns">Home</CDBSidebarMenuItem>
           </NavLink>
-          <NavLink exact to="/cars" activeclassname="activeClicked">
+          <NavLink exact to="/cars" className={(link) => (link.isActive ? 'link active' : 'link')}>
             <CDBSidebarMenuItem icon="car">Cars</CDBSidebarMenuItem>
           </NavLink>
-          <NavLink exact to="/reserve" activeclassame="activeClicked">
+          <NavLink exact to="/reserve" className={(link) => (link.isActive ? 'link active' : 'link')}>
             <CDBSidebarMenuItem icon="table">Reserve</CDBSidebarMenuItem>
           </NavLink>
-          <NavLink exact to="/reservations" activeclassname="activeClicked">
+          <NavLink exact to="/reservations" className={(link) => (link.isActive ? 'link active' : 'link')}>
             <CDBSidebarMenuItem icon="chart-line">My Reservations</CDBSidebarMenuItem>
           </NavLink>
 
-          <NavLink exact to="/addCar" activeclassname="activeClicked">
+          <NavLink exact to="/addCar" className={(link) => (link.isActive ? 'link active' : 'link')}>
             <CDBSidebarMenuItem icon="car">Add Cars</CDBSidebarMenuItem>
           </NavLink>
 
-          <NavLink exact to="/delete" activeclassname="activeClicked">
+          <NavLink exact to="/delete" className={(link) => (link.isActive ? 'link active' : 'link')}>
             <CDBSidebarMenuItem icon="trash">Delete</CDBSidebarMenuItem>
           </NavLink>
         </CDBSidebarMenu>
       </CDBSidebarContent>
 
-      <CDBSidebarFooter style={{ textAlign: 'start', marginLeft: '30px' }}>
-        <div style={{ padding: '20px 5px', gap: '50px' }}>
+      <CDBSidebarFooter style={{ textAlign: 'start', display: 'flex', flexWrap: 'wrap' }}>
+        <div style={{
+          padding: '10px 5px', minWidth: '90%', display: 'flex', flexWrap: 'nowrap', justifyContent: 'space-evenly', gap: '5%',
+        }}
+        >
           <FaFacebook size={18} />
           <FaTwitter size={18} />
           <FaLinkedin size={18} />
         </div>
-        <p>Copyright © 2021. All Rights Reserved.</p>
+        <p style={{ marginLeft: '3%' }}>Copyright © 2021. All Rights Reserved.</p>
       </CDBSidebarFooter>
     </CDBSidebar>
   </div>
