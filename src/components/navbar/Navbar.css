@@ -1,3 +1,7 @@
-.sc-cfxfcM {
+.sc-cfxfcM.hQSxZz {
+  margin: 10px 0;
+}
+
+.link.active > li {
   background-color: var(--color-secondary);
 }
