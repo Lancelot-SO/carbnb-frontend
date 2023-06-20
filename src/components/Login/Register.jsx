@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { registerUser } from '../../redux/Actions/user-actions';
 
 const Register = () => {
@@ -9,10 +9,11 @@ const Register = () => {
   const [username, setUserName] = useState('');
 
   const dispatch = useDispatch();
+  const status = useSelector((state) => state?.registerSlice.status);
 
   const handleRegister = (e) => {
     e.preventDefault();
-    dispatch(registerUser(name, username));
+    dispatch(registerUser({ name, username }));
   };
 
   return (
@@ -22,6 +23,17 @@ const Register = () => {
         <input onChange={(e) => setUserName(e.target.value)} type="username" name="username" value={username} id="username" placeholder="Username:" required />
         <input className="login-btn" type="submit" value="Sign up" />
       </form>
+      <p className="status">
+        {' '}
+        {status && (
+        <p>
+          Status :
+          {' '}
+          {status}
+        </p>
+        )}
+        {' '}
+      </p>
       <p>
         Already have account
         <span><Link to="/login"> Login </Link></span>
