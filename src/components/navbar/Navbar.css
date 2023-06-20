@@ -4,4 +4,9 @@
 
 .link.active > li {
   background-color: var(--color-secondary);
+  color: white;
+}
+
+.sidebar-content {
+  color: black;
 }

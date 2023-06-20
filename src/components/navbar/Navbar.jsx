@@ -9,8 +9,11 @@ import './Navbar.css';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => (
-  <div style={{ display: 'flex', height: '100vh', overflow: 'scroll initial' }}>
-    <CDBSidebar textColor="#fff" backgroundColor="#333">
+  <div style={{
+    display: 'flex', height: '100vh', overflow: 'scroll initial', borderRight: '1px solid var(--color-gray)',
+  }}
+  >
+    <CDBSidebar textColor="#000" backgroundColor="#fff">
       <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large" />}>
         <a href="/" className="text-decoration-none" style={{ color: 'inherit' }}>
           CarBnB
@@ -18,12 +21,9 @@ const Navbar = () => (
       </CDBSidebarHeader>
 
       <CDBSidebarContent className="sidebar-content">
-        <CDBSidebarMenu style={{ paddingTop: '100px' }}>
+        <CDBSidebarMenu style={{ paddingTop: '100px', color: '#000' }}>
           <NavLink exact to="/" className={(link) => (link.isActive ? 'link active' : 'link')}>
             <CDBSidebarMenuItem icon="columns">Home</CDBSidebarMenuItem>
-          </NavLink>
-          <NavLink exact to="/cars" className={(link) => (link.isActive ? 'link active' : 'link')}>
-            <CDBSidebarMenuItem icon="car">Cars</CDBSidebarMenuItem>
           </NavLink>
           <NavLink exact to="/reserve" className={(link) => (link.isActive ? 'link active' : 'link')}>
             <CDBSidebarMenuItem icon="table">Reserve</CDBSidebarMenuItem>
