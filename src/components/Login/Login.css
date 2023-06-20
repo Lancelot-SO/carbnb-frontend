@@ -56,3 +56,11 @@
 .form-container-login a:hover {
   text-decoration: underline;
 }
+
+.status {
+  border: 1px solid;
+  padding: 0 1%;
+  border-radius: 15px;
+  background: rgb(238, 78, 78);
+  color: white;
+}

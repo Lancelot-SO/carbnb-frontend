@@ -111,6 +111,12 @@
   width: 100%;
 }
 
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  top: 22vh;
+}
+
 .car-swiper-slide-text > div {
   font-size: 18px;
 }

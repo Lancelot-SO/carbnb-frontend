@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchUser } from '../../redux/Actions/user-actions';
 import './Login.css';
 
 const Login = () => {
   const [username, setUserName] = useState('');
   const dispatch = useDispatch();
+  const status = useSelector((state) => state?.userSlice.status);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -27,6 +28,17 @@ const Login = () => {
         />
         <input className="login-btn" type="submit" value="Login" />
       </form>
+      <p className="status">
+        {' '}
+        {status && (
+        <p>
+          Status :
+          {' '}
+          {status}
+        </p>
+        )}
+        {' '}
+      </p>
       <p>Don&apos;t have an account?</p>
       <Link to="/register">Sign in</Link>
     </div>
