@@ -1,6 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { userActions } from '../Slices/user-slice';
 import { Login } from '../../config';
 
 export const fetchUsers = createAsyncThunk(
@@ -15,49 +14,29 @@ export const fetchUsers = createAsyncThunk(
   },
 );
 
-export const fetchUser = (username) => async (dispatch) => {
-  const response = await fetch(`http://127.0.0.1:3000/api/v1/login/${username}`);
-  const data = await response.json();
-  console.log(data);
+export const fetchUser = createAsyncThunk(
+  'users/getCurrentUser',
+  async (username, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(`http://127.0.0.1:3000/api/v1/login/${username}`);
+      Login(username);
+      return response.data;
+    } catch (err) {
+      return rejectWithValue(err.response.data.message);
+    }
+  },
+);
 
-  Login(username);
-
-  const { user } = data;
-  const loggedIn = data.logged_in;
-
-  const person = {
-    name: user.name,
-    username: user.username,
-    id: user.id,
-    loggedIn,
-  };
-
-  dispatch(userActions.loginUser(person));
-};
-
-export const registerUser = (name, username) => async (dispatch) => {
-  const response = await fetch('http://127.0.0.1:3000/api/v1/register', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-
-    body: JSON.stringify({
-      username,
-      name,
-    }),
+export const registerUser = createAsyncThunk('users/registerCurrentUser',
+  async ({ name, username }, { rejectWithValue }) => {
+    try {
+      const response = await axios.post('http://127.0.0.1:3000/api/v1/register', {
+        name,
+        username,
+      });
+      Login(username);
+      return response.data;
+    } catch (err) {
+      return rejectWithValue(err.response.data.message);
+    }
   });
-  const data = await response.json();
-
-  const { user } = data;
-  const loggedIn = data.logged_in;
-
-  const person = {
-    name: user.name,
-    username: user.username,
-    id: user.id,
-    loggedIn,
-  };
-
-  dispatch(userActions.loginUser(person));
-};

@@ -9,6 +9,8 @@ const Reserve = ({
   const reservedCar = cars.find((car) => car.id === reserve.car_id);
 
   if (reservedCar) {
+    const parsedDate = new Date(reserve.date);
+    const formattedDate = parsedDate.toLocaleDateString();
     return (
       <>
         <tr key={reserve.id}>
@@ -17,7 +19,7 @@ const Reserve = ({
             {' '}
             {reservedCar.name}
           </td>
-          <td>{reserve.date}</td>
+          <td>{formattedDate}</td>
           <td>{reserve.city}</td>
         </tr>
       </>
