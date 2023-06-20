@@ -7,7 +7,7 @@ export const fetchUsers = createAsyncThunk(
   'users/allUsers',
   async () => {
     try {
-      const res = await axios.get('http://127.0.0.1:3000/users/index');
+      const res = await axios.get('http://127.0.0.1:3000/api/v1/users/index');
       return res.data;
     } catch (err) {
       return err.message;
