@@ -1,0 +1,220 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`App > renders Cars 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="details-container"
+      >
+        <section
+          class="details-image"
+          style="background-image: url(undefined); background-size: cover; background-repeat: no-repeat; background-position: center;"
+        />
+        <section
+          class="details-info"
+        >
+          <div
+            class="details-top"
+          >
+            <h5
+              class="details-name"
+            />
+            <p
+              class="details-description"
+            />
+            <ul
+              class="details-list"
+            >
+              <li>
+                <span>
+                  Model
+                </span>
+                <span />
+              </li>
+              <li>
+                <span>
+                  Price
+                </span>
+                <span />
+              </li>
+            </ul>
+            <div
+              class="details-link-container"
+            >
+              <a
+                class="details-link"
+                href="/"
+              >
+                discover more models
+                <span>
+                  ➤
+                </span>
+              </a>
+            </div>
+          </div>
+          <div
+            class="reserve-btn-container"
+          >
+            <div
+              class="details-reserve-btn"
+            >
+              <a
+                href="/reserve"
+              >
+                <button
+                  class="details-btn"
+                  type="button"
+                >
+                  <span
+                    class="reserve-text"
+                  >
+                    Reserve
+                  </span>
+                  <img
+                    alt="reserve-icon"
+                    class="right-icon"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAACAklEQVR4nM3Xu24TURAGYCM5OHSEwpQQCgoQFQ0NJHFoIMCbgAS8AV0gOI8QjAhIRDQQLooicZHzDkAEb0ACgiJUHzrKFBuwvbu+iBzpSEezc+bfmZ35Z7ZS2e8Lh3AVC1jG+9jpfA9XMD5MwBN4iF/4hqe4j5ux03kFW6HzAJODANbQxG88xwyqPfSraGA17qTI1MqCHsUGPuJ8Hy89hc9oo14G9Cve4HBZ0IydCazhSy54hHcjQLuGtQR4NcDbONhLsRnh7dvTLp5/SpnfK3tTUlzIMXQaN0qCT2OnY7ZHybwoYOQMvmOxJPhLtDqRQ6rBmYJGzpUFxyx+7iEZXAtyKJxQOBuksYgDBfTHQn8uK0yUt1IUtF/P8Qx3s4InXbNuiJ7bpdflrOAtbvUDnPH8B+7k6N1OWPsC+HEi9UFDXUC3iUf/K7nms4LUxLdTyo/C09AfC4xLWeF4FHdjhARy8R8CiQet1MQLGDjVJ2W+wlKnB5NB5FM5Bk7ieknQRtg+3k1hIVrYRBnDOaBHsLknqboMAu1o3sMYBFJCreNDz0EglOsxrqwN4nl4ul5o9PkLvB1hn66UXPFNN8PTetnLtSCWnWjis73qPMKaSuZ13JnPDW+vFdneikFhK9inmRnomyHbjjpdwrHKsJZdkplL/TTxLd7FTuckuzzUX5hRrT+dIUr6Buw0mQAAAABJRU5ErkJggg=="
+                  />
+                </button>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="details-container"
+    >
+      <section
+        class="details-image"
+        style="background-image: url(undefined); background-size: cover; background-repeat: no-repeat; background-position: center;"
+      />
+      <section
+        class="details-info"
+      >
+        <div
+          class="details-top"
+        >
+          <h5
+            class="details-name"
+          />
+          <p
+            class="details-description"
+          />
+          <ul
+            class="details-list"
+          >
+            <li>
+              <span>
+                Model
+              </span>
+              <span />
+            </li>
+            <li>
+              <span>
+                Price
+              </span>
+              <span />
+            </li>
+          </ul>
+          <div
+            class="details-link-container"
+          >
+            <a
+              class="details-link"
+              href="/"
+            >
+              discover more models
+              <span>
+                ➤
+              </span>
+            </a>
+          </div>
+        </div>
+        <div
+          class="reserve-btn-container"
+        >
+          <div
+            class="details-reserve-btn"
+          >
+            <a
+              href="/reserve"
+            >
+              <button
+                class="details-btn"
+                type="button"
+              >
+                <span
+                  class="reserve-text"
+                >
+                  Reserve
+                </span>
+                <img
+                  alt="reserve-icon"
+                  class="right-icon"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAACAklEQVR4nM3Xu24TURAGYCM5OHSEwpQQCgoQFQ0NJHFoIMCbgAS8AV0gOI8QjAhIRDQQLooicZHzDkAEb0ACgiJUHzrKFBuwvbu+iBzpSEezc+bfmZ35Z7ZS2e8Lh3AVC1jG+9jpfA9XMD5MwBN4iF/4hqe4j5ux03kFW6HzAJODANbQxG88xwyqPfSraGA17qTI1MqCHsUGPuJ8Hy89hc9oo14G9Cve4HBZ0IydCazhSy54hHcjQLuGtQR4NcDbONhLsRnh7dvTLp5/SpnfK3tTUlzIMXQaN0qCT2OnY7ZHybwoYOQMvmOxJPhLtDqRQ6rBmYJGzpUFxyx+7iEZXAtyKJxQOBuksYgDBfTHQn8uK0yUt1IUtF/P8Qx3s4InXbNuiJ7bpdflrOAtbvUDnPH8B+7k6N1OWPsC+HEi9UFDXUC3iUf/K7nms4LUxLdTyo/C09AfC4xLWeF4FHdjhARy8R8CiQet1MQLGDjVJ2W+wlKnB5NB5FM5Bk7ieknQRtg+3k1hIVrYRBnDOaBHsLknqboMAu1o3sMYBFJCreNDz0EglOsxrqwN4nl4ul5o9PkLvB1hn66UXPFNN8PTetnLtSCWnWjis73qPMKaSuZ13JnPDW+vFdneikFhK9inmRnomyHbjjpdwrHKsJZdkplL/TTxLd7FTuckuzzUX5hRrT+dIUr6Buw0mQAAAABJRU5ErkJggg=="
+                />
+              </button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
