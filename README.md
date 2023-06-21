@@ -55,9 +55,9 @@ After you're finished please remove all the comments and instructions!
 
 **[Car-BnB-API]**This is a car dealership app where a person can reserve a car or add a car.
 
-### Frontend Repository
+### Backend Repository
 
-- <a href="https://github.com/Lancelot-SO/carbnb-frontend.git">React(Vite) Link</a>
+- <a href="https://github.com/Ogaga01/Car-BnB-API">React(Vite) Link</a>
 
 ## 🛠 Built With
 
