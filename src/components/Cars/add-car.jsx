@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import './add-car.css';
 import { addCar } from '../../redux/Actions/car-actions';
@@ -7,7 +7,7 @@ import { fetchUsers } from '../../redux/Actions/user-actions';
 
 const AddCar = () => {
   const dispatch = useDispatch();
-  const history = useHistory();
+  // const history = useHistory();
 
   const [name, setName] = useState('');
   const [user, setUser] = useState(null);
@@ -53,7 +53,7 @@ const AddCar = () => {
     setPrice(0);
     setModel('');
     setTimeout(() => {
-      history.push('/homepage');
+      window.location.pathname = '/'
     }, 200);
   };
 
