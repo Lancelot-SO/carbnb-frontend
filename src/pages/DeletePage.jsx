@@ -23,7 +23,7 @@ const DeletePage = () => {
 
   return (
     <div>
-      <h1>Delete Page</h1>
+      <h1>Delete Car</h1>
       <Table striped bordered>
         <thead>
           <tr>

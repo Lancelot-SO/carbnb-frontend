@@ -11,7 +11,7 @@ import MyReservations from './pages/MyReservations';
 import DeletePage from './pages/DeletePage';
 import CarDetails from './pages/CarDetails';
 
-function App() {
+const App = () => {
   const isLoggedIn = JSON.parse(localStorage.getItem('user'))?.length > 0 || false;
 
   useEffect(() => {
@@ -107,6 +107,6 @@ function App() {
     </Routes>
 
   );
-}
+};
 
 export default App;
