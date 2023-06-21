@@ -15,7 +15,7 @@ function App() {
 
     <Routes>
       <Route
-        path="/"
+        path="/homepage"
         element={(
           <>
             <div className="homepage-container">
@@ -42,7 +42,7 @@ function App() {
           </>
       )}
       />
-      <Route path="/login" element={<Login />} />
+      <Route path="/" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route
         path="/addCar"
