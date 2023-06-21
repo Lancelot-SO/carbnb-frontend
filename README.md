@@ -57,7 +57,7 @@ After you're finished please remove all the comments and instructions!
 
 ### Backend Repository
 
-- <a href="https://github.com/Ogaga01/Car-BnB-API">React(Vite) Link</a>
+- <a href="https://github.com/Ogaga01/Car-BnB-API">Backend Repo Link</a>
 
 ## 🛠 Built With
 
