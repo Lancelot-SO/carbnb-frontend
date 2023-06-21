@@ -9,13 +9,21 @@ import AddReservation from './components/Reservations/add-reservations';
 import MyReservations from './pages/MyReservations';
 import DeletePage from './pages/DeletePage';
 import CarDetails from './pages/CarDetails';
+import { useEffect } from 'react';
 
 function App() {
-  return (
+  const isLoggedIn = JSON.parse(localStorage.getItem('user'))?.length > 0 || false;
 
+  useEffect(() => {
+    if (!isLoggedIn && window.location.pathname !== '/login' && window.location.pathname !== '/register') {
+      window.location = '/login';
+    }
+  }, []);
+  
+  return (
     <Routes>
       <Route
-        path="/homepage"
+        path="/"
         element={(
           <>
             <div className="homepage-container">
@@ -42,7 +50,7 @@ function App() {
           </>
       )}
       />
-      <Route path="/" element={<Login />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route
         path="/addCar"
