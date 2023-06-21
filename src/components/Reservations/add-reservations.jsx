@@ -46,7 +46,6 @@ const AddReservation = () => {
 
   useEffect(() => {
     if (carId === '') {
-      // dispatch(clearCars());
       dispatch(fetchcars());
     }
   }, [dispatch, carId]);
@@ -65,7 +64,7 @@ const AddReservation = () => {
       setDate(null);
       setCity('');
       setTimeout(() => {
-        window.location.href = '/';
+        window.location.href = '/reservations';
       }, 200);
     }
   };

@@ -20,7 +20,6 @@ export const Details = () => {
   }, [dispatch, id]);
 
   const details = useSelector((state) => state.carDetailsSlice[0]?.car);
-  console.log(details);
 
   const imageSectionStyles = {
     backgroundImage: `url(${details?.image})`,
