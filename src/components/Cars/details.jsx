@@ -42,7 +42,10 @@ export const Details = () => {
             </li>
             <li>
               <span>Price</span>
-              <span>{details?.price}</span>
+              <span>
+                $
+                {details?.price}
+              </span>
             </li>
           </ul>
           <div className="details-link-container">

@@ -16,7 +16,7 @@ export const createNewCar = async (
   price,
   image,
 ) => {
-  const response = await fetch(
+  await fetch(
     'http://127.0.0.1:3000/api/v1/car',
     {
       method: 'POST',
@@ -34,12 +34,10 @@ export const createNewCar = async (
       }),
     },
   );
-  const data = await response.json();
 };
 
 export const deleteCar = async (id) => {
-  const response = await fetch(`http://127.0.0.1:3000/api/v1/car/${id}`, {
+  await fetch(`http://127.0.0.1:3000/api/v1/car/${id}`, {
     method: 'DELETE',
   });
-  const data = await response.json();
 };

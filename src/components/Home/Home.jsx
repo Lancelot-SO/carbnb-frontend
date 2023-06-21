@@ -77,7 +77,10 @@ const Home = () => {
                           {' '}
                           {slideContent.name}
                         </h1>
-                        <h4 className="car-model">{slideContent.price}</h4>
+                        <h4 className="car-model">
+                          $
+                          {slideContent.price}
+                        </h4>
                         <p className="car-description">
                           {slideContent.description}
                         </p>
