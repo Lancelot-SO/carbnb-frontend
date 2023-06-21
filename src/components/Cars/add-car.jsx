@@ -19,7 +19,7 @@ const AddCar = () => {
   const users = useSelector((state) => state.usersSlice.users[0]);
 
   useEffect(() => {
-    setUser(users?.find((user) => user.username === JSON.parse(localStorage.getItem('user').toLowerCase())) || 0);
+    setUser(users?.find((user) => user.username === JSON.parse(localStorage.getItem('user'))) || 0);
   }, [users]);
 
   const [description, setDescription] = useState('');

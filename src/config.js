@@ -1,5 +1,5 @@
 const Login = (username) => {
-  localStorage.setItem('user', JSON.stringify(username));
+  localStorage.setItem('user', JSON.stringify(username.toLowerCase()));
   window.location.href = '/';
 };
 
