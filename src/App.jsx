@@ -1,5 +1,6 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
 import Login from './components/Login/login';
 import HomePage from './pages/HomePage';
 import Register from './components/Login/Register';
@@ -9,7 +10,6 @@ import AddReservation from './components/Reservations/add-reservations';
 import MyReservations from './pages/MyReservations';
 import DeletePage from './pages/DeletePage';
 import CarDetails from './pages/CarDetails';
-import { useEffect } from 'react';
 
 function App() {
   const isLoggedIn = JSON.parse(localStorage.getItem('user'))?.length > 0 || false;
@@ -19,7 +19,7 @@ function App() {
       window.location = '/login';
     }
   }, []);
-  
+
   return (
     <Routes>
       <Route

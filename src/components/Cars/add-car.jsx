@@ -53,7 +53,7 @@ const AddCar = () => {
     setPrice(0);
     setModel('');
     setTimeout(() => {
-      window.location.pathname = '/'
+      window.location.pathname = '/';
     }, 200);
   };
 
