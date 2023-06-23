@@ -29,25 +29,24 @@ After you're finished please remove all the comments and instructions!
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
+- [📗 Table of Contents](#-table-of-contents)
+- [](#)
+    - [Frontend Repository](#frontend-repository)
+  - [🛠 Built With](#-built-with)
     - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#deployment)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
-- [📝 License](#license)
+    - [Key Features ](#key-features-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Frontend](#frontend)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [Acknowledgments](#acknowledgments)
+  - [KanBan Board](#kanban-board)
+  - [❓ FAQ (OPTIONAL) ](#-faq-optional-)
+  - [📝 License ](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
 
@@ -59,15 +58,27 @@ After you're finished please remove all the comments and instructions!
 
 - <a href="https://github.com/Ogaga01/Car-BnB-API">Backend Repo Link</a>
 
+### KanBan Board
+
+- <a href="https://github.com/users/Ogaga01/projects/2">KanBan Board Link</a>
+
+- The Team has four members;
+  - [@Ogaga Iyara](https://github.com/Ogaga01)
+  - [@Felix Sowah](https://github.com/Lancelot-SO)
+  - [@Shakir Hussain](https://github.com/Shakir-Hussain12)
+  - [@Ellon M](https://github.com/Ellon-M)
+
+![Image](https://github.com/Ogaga01/Car-BnB-API/assets/98261268/93ea828f-fe29-48fa-a368-a25a6240fba5)
+
+
 ## 🛠 Built With
 
-- React
-- Redux
+- Ruby
+- Ruby on Rails
 - Postgresql
 - React(Vite)
 - WebPack
 - VScode
-- Ruby
   <a name="built-with"></a>
 
 ### Tech Stack
@@ -76,7 +87,6 @@ After you're finished please remove all the comments and instructions!
 - Ruby on Rails
 - Postgresql
 - React(Vite)
-- JavaScript
   <a name="tech-stack"></a>
 
 <details>
@@ -132,6 +142,9 @@ To setup the project locally: clone the repository using:
 https://github.com/Ogaga01/Car-BnB-API.git```
 
 ### Install
+run: `rails db:create`
+
+run: `rails db:migrate`
 
 run: `rails server`
 
@@ -187,9 +200,9 @@ to get random greetings from the frontend follow the follwing steps:
 
 👤 **Ellon Mordecai**
 
-- GitHub: [@Ellon Modeccai](https://github.com/Ellon-M)
-- Twitter: [@Ellon Modeccai](https://twitter.com/ellonm4)
-- LinkedIn: [@Ellon Modeccai](https://linkedin.com/in/ellon-m)
+- GitHub: [@Shakir Hussain](https://github.com/Ellon-M)
+- Twitter: [@Shakir Hussain](https://twitter.com/ellonm4)
+- LinkedIn: [@Shakir Hussain](https://linkedin.com/in/ellon-m)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -227,6 +240,14 @@ Give a ⭐️ if you like this project!.
 - We will like to thank the microverse community for their support.
 
 <a name="acknowledgements"></a>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- KanBan Board -->
+
+## KanBan Board
+- Link to [KanBan Board](https://github.com/users/Ogaga01/projects/2)
+- Link to [Initial KanBan State](https://github.com/Ogaga01/Car-BnB-API/issues/17)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
